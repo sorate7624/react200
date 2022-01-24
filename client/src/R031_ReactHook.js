@@ -1,12 +1,22 @@
 import React, {
-  Component
+  useState,
+  useEffect
 } from 'react';
 
-class R031_ReactHook extends Component {
+function R031_ReactHook(props) {
+  const [contents, setContents] = useState('[THIS IS REACT]');
 
-  render() {
+  useEffect(() => {
+    console.log('useEffect');
+  });
 
-  }
+  return (
+    <div style={{padding: "0px"}}>
+      <h2>{contents}</h2>
+      <button onClick={()=>setContents('[THIS IS HOOK]')}> 버튼</button>
+    </div>
+  )
+
 }
 
 export default R031_ReactHook;
